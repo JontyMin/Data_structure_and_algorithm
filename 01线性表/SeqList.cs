@@ -2,6 +2,10 @@
 
 namespace _01线性表
 {
+    /// <summary>
+    /// 顺序表
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class SeqList<T>:IListDs<T>
     {
        /// <summary>

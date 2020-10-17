@@ -34,6 +34,33 @@ namespace _01线性表
 
             Console.WriteLine(seq.IsEmpty());
 
+
+            Console.WriteLine("---------LinkList--------");
+            LinkList<string>linkList=new LinkList<string>();
+            linkList.Add("123");
+            linkList.Add("456");
+            linkList.Add("789");
+            for (int i = 0; i < linkList.GetLength(); i++)
+            {
+                Console.WriteLine(linkList[i]);
+            }
+
+            Console.WriteLine($"GetItem:{linkList.GetItem(1)}");
+
+            linkList.Insert("777", 1);
+            for (int i = 0; i < linkList.GetLength(); i++)
+            {
+                Console.WriteLine(linkList[i]);
+            }
+
+            Console.WriteLine("----clear---");
+            linkList.Clear();
+            for (int i = 0; i < linkList.GetLength(); i++)
+            {
+                Console.WriteLine(linkList[i]);
+            }
+            Console.WriteLine("----end clear---");
+
         }
     }
 }

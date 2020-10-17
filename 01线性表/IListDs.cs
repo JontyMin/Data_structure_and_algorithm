@@ -1,5 +1,9 @@
 ﻿namespace _01线性表
 {
+    /// <summary>
+    /// 线性表接口
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface IListDs<T>
     {
         /// <summary>
