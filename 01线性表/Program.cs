@@ -9,7 +9,7 @@ namespace _01线性表
             Console.WriteLine("Hello World!");
 
             // 使用顺序表
-            SeqList<string> seq = new SeqList<string>();
+            IListDs<string> seq = new SeqList<string>();
             seq.Add("123");
             seq.Add("456");
             seq.Add("789");
@@ -36,7 +36,7 @@ namespace _01线性表
 
 
             Console.WriteLine("---------LinkList--------");
-            LinkList<string>linkList=new LinkList<string>();
+            IListDs<string> linkList=new LinkList<string>();
             linkList.Add("123");
             linkList.Add("456");
             linkList.Add("789");
