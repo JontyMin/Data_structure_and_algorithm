@@ -10,7 +10,13 @@ namespace _03队列
             Console.WriteLine("Hello World!");
 
             // 1、使用BCL Queue
-            Queue<int>queue=new Queue<int>();
+            // Queue<int>queue=new Queue<int>();
+
+            // 2、使用SeqQueue
+            // IQueue<int>queue=new SeqQueue<int>();
+
+            // 3、使用链队列
+            IQueue<int>queue=new LinkQueue<int>();
 
             // 入队
             queue.Enqueue(12);
@@ -37,6 +43,34 @@ namespace _03队列
             Console.WriteLine($"Clear:{queue.Count}");
 
 
+            // 判断是否是回文字符串小案例
+            Console.WriteLine("请输入字符串：");
+            string str = Console.ReadLine();
+
+            Stack<char> stack = new Stack<char>();
+            Queue<char> que = new Queue<char>();
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                // 入栈
+                stack.Push(str[i]);
+
+                // 入队
+                que.Enqueue(str[i]);
+            }
+
+            bool flag = true;
+
+            while (stack.Count>0)
+            {
+                if (stack.Pop()!= que.Dequeue())
+                {
+                    flag = false;
+                    break;
+                }
+            }
+
+            Console.WriteLine($"{str}是否是回文：{flag}");
         }
     }
 }

@@ -10,9 +10,9 @@
 
         void Clear();
 
-        void EnQueue(T item);
+        void Enqueue(T item);
 
-        T DeQueue();
+        T Dequeue();
 
         T Peek();
 
