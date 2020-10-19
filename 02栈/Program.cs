@@ -5,6 +5,14 @@ namespace _02栈
 {
     class Program
     {
+
+        /*
+         * 栈(Stack)是操作限定在表的尾端进行的线性表
+         * 表尾：栈顶=>Top  栈底=>Buttom
+         * 无数据 空栈=>Empty Stack
+         * 栈的操作是按照 后进先出(Last in First out) 简称LIFO表
+         * 先进后出(First in Last out) FILO表
+         */
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");

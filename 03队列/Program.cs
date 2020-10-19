@@ -5,6 +5,14 @@ namespace _03队列
 {
     class Program
     {
+        /*
+         * 队列(Queue)是插入操作限定在表的尾部而其它操作限定在表的头部进行的线性表。
+         * 把进行插入操作的表尾称为队尾(Rear)，把进行其它操作的头部称为队头(Front)。
+         * 当队列中没有数据元素时称为空队列(Empty Queue)。
+         * 队列的操作：先进先出(First in First out) FIFO表
+         * 后进后出(Last in Last Out)LILO表
+         *
+         */
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");

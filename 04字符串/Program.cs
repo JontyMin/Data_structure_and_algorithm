@@ -3,6 +3,10 @@ namespace _04字符串
 {
     class Program
     {
+        /*
+         * 在应用程序中使用最频繁的类型是字符串。
+         * 字符串简称串，是一种特殊的线性表，其特殊性在于串中的数据元素是一个个的字符
+         */
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");

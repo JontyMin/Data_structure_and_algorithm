@@ -4,6 +4,16 @@ namespace _01线性表
 {
     class Program
     {
+        /*
+         * 线性表是线性结构的抽象
+         * 特点：结构中的数据元素之间存在一对一的线性关系=>位置
+         * C# 1.1提供了非泛型接口IList:ArrayList、ListDictionary...
+         * C# 2.0提供了泛型IList<T>接口
+         * 线性表：1、顺序表:顺序存储(Sequence Storage) 内存中一块地址连续的空间依次存放
+         *       2、单链表:链式存储(Linked Storage)用一组任意的存储单元来存储线性表中的数据元素
+         *       3、双向链表:(Doubly Linked List)
+         *       4、循环链表:(Circular Linked List)
+         */
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
