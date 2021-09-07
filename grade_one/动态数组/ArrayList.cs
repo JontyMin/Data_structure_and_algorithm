@@ -1,0 +1,132 @@
+﻿namespace 动态数组
+{
+    public class ArrayList<T>:IArrayList<T>
+    {
+        /// <summary>
+        /// 默认长度
+        /// </summary>
+        private const int DEFAULT = 10;
+
+        /// <summary>
+        /// 数量
+        /// </summary>
+        private int size;
+
+        /// <summary>
+        /// 所有元素
+        /// </summary>
+        private T[] arrs;
+
+        public ArrayList(T[] arrs)
+        {
+            this.arrs = arrs;
+        }
+
+        public ArrayList(int capaticy)
+        {
+            capaticy = capaticy < DEFAULT ? DEFAULT : capaticy;
+            arrs = new T[capaticy];
+        }
+
+        /// <summary>
+        /// this 调用构造函数
+        /// 默认选择参数最匹配
+        /// </summary>
+        public ArrayList():this(DEFAULT)
+        {
+
+        }
+
+        /// <summary>
+        /// 获取长度
+        /// </summary>
+        /// <returns></returns>
+        public int Size()
+        {
+            return size;
+        }
+
+        /// <summary>
+        /// 是否为空
+        /// </summary>
+        /// <returns></returns>
+        public bool IsEmpty()
+        {
+            return size == 0;
+        }
+
+        /// <summary>
+        /// 是否包含
+        /// </summary>
+        /// <param name="element"></param>
+        /// <returns></returns>
+        public bool Contains(T element)
+        {
+            return IndexOf(element) > -1;
+        }
+
+        /// <summary>
+        /// 新增
+        /// </summary>
+        /// <param name="element"></param>
+        public void Add(T element)
+        {
+            arrs[size+1]=element;
+        }
+
+        public void Remove(T element)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// 清除所有元素
+        /// </summary>
+        public void Clear()
+        {
+            size = 0;
+        }
+
+        public void Set(T element)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Set(T element, int index)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// 根据下标获取
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public T Get(int index)
+        {
+            if (index<0|| index >=size)
+            {
+                return default(T);
+            }
+            return (T)arrs[index];
+        }
+
+        /// <summary>
+        /// 查找
+        /// </summary>
+        /// <param name="element"></param>
+        /// <returns></returns>
+        public int IndexOf(T element)
+        {
+            for (var i = 0; i < size; i++)
+            {
+                if (arrs[i].Equals(element))
+                {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
+    }
+}
