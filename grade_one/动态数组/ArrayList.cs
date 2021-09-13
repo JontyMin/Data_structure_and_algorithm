@@ -1,4 +1,8 @@
-﻿namespace 动态数组
+﻿using System;
+using System.ComponentModel.Design;
+using System.Text;
+
+namespace 动态数组
 {
     public class ArrayList<T>:IArrayList<T>
     {
@@ -74,11 +78,32 @@
             arrs[size++] = element;
         }
 
+        /// <summary>
+        /// 根据下标添加
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="index"></param>
         public void Add(T element, int index)
         {
+            if (index < 0 || index > size)
+            {
+                throw new IndexOutOfRangeException();
+            }
+
+            for (var i = size; i >= index; i--)
+            {
+                arrs[i + 1] = arrs[i];
+            }
+
+            arrs[index] = element;
 
         }
 
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         public T Remove(int index)
         {
             if (index < 0 || index >= size)
@@ -87,12 +112,13 @@
             }
 
             var oldElement=arrs[index];
-            for (var i = index + 1; i < size - 1; i++)
+            for (var i = index + 1; i < size; i++)
             {
-                arrs[i-1]=arrs[i];
+                // 元素前移
+                arrs[i - 1] = arrs[i];
             }
 
-            size--;
+            arrs[--size] = default(T);
             return oldElement;
         }
 
@@ -125,7 +151,8 @@
         {
             if (index < 0 || index >= size)
             {
-                return default(T);
+                // return default(T);
+                throw new IndexOutOfRangeException();
             }
 
             return (T)arrs[index];
@@ -147,6 +174,17 @@
             }
 
             return -1;
+        }
+
+        public override string ToString()
+        {
+            var str = new StringBuilder();
+            foreach (var arr in arrs)
+            {
+                str.Append(arr);
+            }
+
+            return str.ToString();
         }
     }
 }

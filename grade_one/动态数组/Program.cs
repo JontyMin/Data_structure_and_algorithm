@@ -15,10 +15,14 @@ namespace 动态数组
             arr.Add("cc");
             arr.Add("ee");
             arr.Add("ff");
+            Console.WriteLine(arr.ToString());
 
-            Console.WriteLine(arr.Get(2));
+            arr.Remove(2);
 
-            Array
+            arr.Add("43",arr.Size()-1);
+            Console.WriteLine(arr.ToString());
+
+
         }
     }
 }
