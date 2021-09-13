@@ -11,8 +11,14 @@ namespace 动态数组
             var arr = new ArrayList<string>();
             
             arr.Add("aa");
+            arr.Add("bb");
+            arr.Add("cc");
+            arr.Add("ee");
+            arr.Add("ff");
 
-            Console.WriteLine(arr.IndexOf("aa"));
+            Console.WriteLine(arr.Get(2));
+
+            Array
         }
     }
 }

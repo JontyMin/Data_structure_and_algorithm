@@ -71,12 +71,29 @@
         /// <param name="element"></param>
         public void Add(T element)
         {
-            arrs[size+1]=element;
+            arrs[size++] = element;
         }
 
-        public void Remove(T element)
+        public void Add(T element, int index)
         {
-            throw new System.NotImplementedException();
+
+        }
+
+        public T Remove(int index)
+        {
+            if (index < 0 || index >= size)
+            {
+                return default(T);
+            }
+
+            var oldElement=arrs[index];
+            for (var i = index + 1; i < size - 1; i++)
+            {
+                arrs[i-1]=arrs[i];
+            }
+
+            size--;
+            return oldElement;
         }
 
         /// <summary>
@@ -84,6 +101,8 @@
         /// </summary>
         public void Clear()
         {
+            // 如果空间比较小可以直接赋0 节省时间
+            // 反之则可以 置空arrs
             size = 0;
         }
 
@@ -104,10 +123,11 @@
         /// <returns></returns>
         public T Get(int index)
         {
-            if (index<0|| index >=size)
+            if (index < 0 || index >= size)
             {
                 return default(T);
             }
+
             return (T)arrs[index];
         }
 

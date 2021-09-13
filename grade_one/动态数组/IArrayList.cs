@@ -13,7 +13,9 @@
 
         void Add(T element);
 
-        void Remove(int index);
+        void Add(T element,int index);
+
+        T Remove(int index);
 
         void Clear();
 
