@@ -9,7 +9,7 @@ namespace 动态数组
         /// <summary>
         /// 默认长度
         /// </summary>
-        private const int DEFAULT = 10;
+        private const int DEFAULT = 2;
 
         /// <summary>
         /// 数量
@@ -75,6 +75,7 @@ namespace 动态数组
         /// <param name="element"></param>
         public void Add(T element)
         {
+            EnsureCapacity(size+1);
             arrs[size++] = element;
         }
 
@@ -185,6 +186,25 @@ namespace 动态数组
             }
 
             return str.ToString();
+        }
+
+        private void EnsureCapacity(int capacity)
+        {
+            var oldCapacity = arrs.Length;
+            if (oldCapacity>=capacity)
+            {
+                return;
+            }
+
+            var newCapacity = oldCapacity + (oldCapacity >> 1);
+            var newArr = new T[newCapacity];
+            for (var i = 0; i < size; i++)
+            {
+                newArr[i] = arrs[i];
+            }
+
+            // 重新赋值
+            arrs = newArr;
         }
     }
 }
